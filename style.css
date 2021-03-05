@@ -1,0 +1,53 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Exo", Arial, sans-serif;
+  background-color: #151522;
+
+  gap: 10px;
+}
+
+:root {
+  --ON: initial;
+  --OFF: ;
+}
+
+.element {
+  --rotate-switch: var(--OFF);
+  --rotate-deg: 45deg;
+  min-width: 50vmin;
+  aspect-ratio: 1 / 1;
+  background-color: #f36;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+  padding: 2rem;
+  gap: 2rem;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  transform: rotate(var(--rotate-switch, var(--rotate-deg)));
+}
+
+.element span {
+  transition: all 0.2s linear;
+  transform: rotate(var(--rotate-switch, -45deg));
+}
+
+.element:hover {
+  --rotate-switch: var(--ON);
+}
